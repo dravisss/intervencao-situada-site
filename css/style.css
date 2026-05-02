@@ -499,6 +499,15 @@ hr { border: 0; height: 1px; background: var(--border-color); margin: 4em 0; }
     font-weight: 600;
 }
 
+.article-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 2em auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
 @media (max-width: 768px) {
     .elegant-hero .hero-title { font-size: 2.5rem; }
     .card-inner { padding: 30px; }
