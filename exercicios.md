@@ -159,34 +159,46 @@ Não respondam "a equipe está desmotivada". Perguntem: o que a configuração *
 
 ---
 
-## Exercício 5 — "Reescreva sem julgar"
+## Exercício 5 — "O Filtro de Julgamento"
 
-**Conceito**: Descrever a tensão de forma factual e não moralizante.
+**Conceito**: Aprender a separar fatos observáveis de avaliações morais na descrição das tensões.
 
-**Timer**: 8 min em breakout + 5 min plenária
+**Timer**: 12 min em breakout + 5 min plenária
 
-**Instrução**: Abaixo, 3 descrições de problemas. À primeira vista, parecem descrições razoáveis. Mas cada uma contém julgamento disfarçado, interpretação ou generalização. Reescrevam cada uma como uma **descrição factual, objetiva, ancorada** — como se fossem câmeras registrando, não juízes opinando.
+**Instrução**: Abaixo estão 5 relatos comuns em organizações que misturam fatos (dados concretos, processos, actantes) com julgamentos (opiniões, intenções atribuídas, adjetivos morais). Para cada um, leiam juntos e discutam o que deve ser riscado. Salvem apenas os fatos que configuram a tensão situada.
 
-**Original A**
-> "O gestor da área não confia no time. Ele precisa aprovar tudo, inclusive tarefas operacionais que o time já sabe fazer. Isso gera um gargalo desnecessário e mostra que a delegação não funciona de verdade na empresa."
+**Relato A**
+> "O gestor da área não confia no time e é muito centralizador. Toda decisão operacional — incluindo tarefas que o time já executou antes — precisa de aprovação dele, que enrola absurdamente e só responde em 2 a 3 dias. O time espera de braços cruzados porque não há um limite de alçada definido. Isso mostra que a delegação não funciona de verdade na empresa."
 
-**Original B**
-> "O time de marketing entrega fora do prazo consistentemente porque é desorganizado e não prioriza as demandas. Falta liderança na área e as pessoas fazem o que querem sem um plano claro."
+**Relato B**
+> "O time de marketing é desorganizado e não prioriza as demandas. Eles têm 5 entregas simultâneas neste mês com o mesmo prazo e nenhuma priorização explícita. O resultado é que as entregas chegam com 2 a 3 dias de atraso, culpa da falta de liderança na área que faz as pessoas trabalharem sem plano. Não há ritual de planejamento semanal visível."
 
-**Original C**
-> "A liderança da empresa tem um discurso bonito sobre inovação, mas na prática não deixa ninguém tentar nada novo. Qualquer proposta minimamente diferente precisa passar por um comitê que se reúne uma vez por mês. É hipocrisia pura."
+**Relato C**
+> "A liderança tem um discurso hipócrita sobre inovação. A empresa declara valorizar inovação, mas na prática ninguém deixa tentar nada novo. Projetos novos precisam de aprovação de um comitê mensal burocrático. Em 6 meses, 4 propostas submetidas, nenhuma aprovada. O comitê não publica razões das recusas porque falta transparência."
+
+**Relato D**
+> "A área de TI é extremamente inflexível e avessa ao negócio. O sistema de CRM antigo não integra com a nova plataforma de vendas. Vendas precisa cadastrar clientes duas vezes. Quando pedimos integração, a TI respondeu que levaria 8 meses e não apresentou alternativa, mostrando total falta de empatia com a operação."
+
+**Relato E**
+> "As reuniões de diretoria são uma perda de tempo e as pessoas só querem aparecer. A pauta tem 10 itens por semana, mas só os 3 primeiros são discutidos na 1 hora de reunião. Os outros 7 são repassados para a semana seguinte. Ninguém tem coragem de cortar os assuntos irrelevantes da pauta."
 
 ---
 
-**Exemplo de reescrita**:
+**Gabarito Esperado (O que deve sobrar após o filtro)**:
 
-**A reescrito**:
-> "Toda decisão operacional — incluindo tarefas que o time já executou antes — precisa de aprovação do gestor. O gestor responde em 2 a 3 dias. O time espera. Não há um limite de alçada que diferencie o que precisa de aprovação do que pode ser decidido diretamente."
+**A filtrado**:
+> Toda decisão operacional — incluindo tarefas que o time já executou antes — precisa de aprovação dele, responde em 2 a 3 dias. O time espera porque não há um limite de alçada definido.
 
-**B reescrito**:
-> "Marketing tem 5 entregas simultâneas neste mês, todas com o mesmo prazo. Não há uma priorização explícita entre elas. As entregas chegam com 2 a 3 dias de atraso nos últimos 3 meses. A área não tem um ritual de planejamento semanal visível para as outras áreas."
+**B filtrado**:
+> Eles têm 5 entregas simultâneas neste mês com o mesmo prazo e nenhuma priorização explícita. As entregas chegam com 2 a 3 dias de atraso. Não há ritual de planejamento semanal visível.
 
-**C reescrito**:
-> "A empresa declara em seus canais internos que valoriza inovação e experimentação. Qualquer proposta de projeto novo precisa ser aprovada por um comitê que se reúne uma vez por mês. Nos últimos 6 meses, 4 propostas foram submetidas e nenhuma foi aprovada. O comitê não publica as razões das recusas."
+**C filtrado**:
+> A empresa declara valorizar inovação, Projetos novos precisam de aprovação de um comitê mensal. Em 6 meses, 4 propostas submetidas, nenhuma aprovada. O comitê não publica razões das recusas.
 
-**Na plenária**: discutir como a versão factual muda a conversa — em vez de "fulano é X" ou "a liderança é Y", vira "a configuração produz Z". A tensão não está na pessoa, está na composição. E uma descrição factual permite que outros discordem dos fatos — uma descrição opinativa só permite concordar ou discutir opinião.
+**D filtrado**:
+> O sistema de CRM não integra com a nova plataforma de vendas. Vendas precisa cadastrar clientes duas vezes. Quando pedimos integração, a TI respondeu que levaria 8 meses e não apresentou alternativa.
+
+**E filtrado**:
+> A pauta tem 10 itens por semana, mas só os 3 primeiros são discutidos na 1 hora de reunião. Os outros 7 são repassados para a semana seguinte.
+
+**Na plenária**: discutir como a versão filtrada muda a conversa — em vez de debater sobre "inflexibilidade" ou "hipocrisia", o grupo foca no fluxo bloqueado (gargalo de aprovação de 3 dias). A tensão não está na pessoa, está na composição de recursos limitados, regras e rotinas ausentes. Um fato permite diagnóstico sistêmico; um julgamento só convida para uma briga de ego.

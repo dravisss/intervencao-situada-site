@@ -2,15 +2,12 @@
 
 .exercise-tabs {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 10px;
     margin-bottom: 40px;
     border-bottom: 1px solid var(--border-color);
-    padding-bottom: 10px;
-    overflow-x: auto;
-    scrollbar-width: none; /* Firefox */
-}
-.exercise-tabs::-webkit-scrollbar {
-    display: none; /* Chrome/Safari */
+    padding-bottom: 20px;
 }
 
 .tab-btn {
@@ -19,23 +16,28 @@
     color: var(--text-muted);
     font-family: var(--font-sans);
     font-weight: 600;
-    font-size: 1rem;
-    padding: 10px 20px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 8px 14px;
     cursor: pointer;
     border-radius: 30px;
     white-space: nowrap;
     transition: all 0.3s ease;
+    margin-bottom: 5px;
 }
 
 .tab-btn:hover {
     color: var(--text-color);
-    background: rgba(255,255,255,0.05);
+    background: rgba(150, 150, 150, 0.1);
 }
 
 .tab-btn.active {
-    background: rgba(201, 162, 99, 0.1);
+    background: rgba(201, 162, 99, 0.15);
     color: var(--secondary-color);
-    border: 1px solid rgba(201, 162, 99, 0.3);
+    border: 1px solid rgba(201, 162, 99, 0.4);
+}
+[data-theme="dark"] .tab-btn.active {
+    background: rgba(201, 162, 99, 0.1);
 }
 
 .exercise-content {
@@ -67,6 +69,24 @@
 
 .ex-card {
     padding: 30px;
+    background: var(--surface-color) !important;
+    border-color: var(--border-color) !important;
+}
+.ex-card h2, .ex-card p {
+    color: var(--text-color) !important;
+}
+.ex-card::before {
+    opacity: 0 !important;
+}
+[data-theme="dark"] .ex-card::before {
+    opacity: 0.5 !important;
+}
+[data-theme="dark"] .ex-card {
+    background: #141518 !important;
+    border-color: #2a2b30 !important;
+}
+[data-theme="dark"] .ex-card p {
+    color: #999 !important;
 }
 
 .scenario-block {
@@ -129,10 +149,10 @@
 .elegant-btn.cancel {
     background: transparent;
     color: var(--text-muted);
-    border: 1px solid var(--text-muted);
+    border: 1px solid var(--border-color);
 }
 .elegant-btn.cancel:hover {
-    background: rgba(255,255,255,0.1);
+    background: rgba(150, 150, 150, 0.1);
 }
 
 /* Secure Reveal Component */
@@ -148,17 +168,25 @@
     align-items: center;
     justify-content: center;
     gap: 15px;
-    background: rgba(229, 62, 62, 0.1);
-    border: 1px solid rgba(229, 62, 62, 0.3);
+    background: #fff5f5;
+    border: 1px solid #feb2b2;
     padding: 15px;
     border-radius: 12px;
     margin-bottom: 20px;
 }
+[data-theme="dark"] .reveal-confirm {
+    background: rgba(229, 62, 62, 0.1);
+    border: 1px solid rgba(229, 62, 62, 0.3);
+}
+
 .reveal-confirm span {
-    color: #fc8181;
+    color: #c53030;
     font-family: var(--font-sans);
     font-size: 0.9rem;
     font-weight: 600;
+}
+[data-theme="dark"] .reveal-confirm span {
+    color: #fc8181;
 }
 
 .reveal-content {
@@ -177,4 +205,235 @@
     .reveal-confirm {
         flex-direction: column;
     }
+}
+
+/* Filtro de Julgamento (Ex 5) */
+.mixed-text-box {
+    background: var(--bg-color);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px dashed var(--border-color);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-color);
+}
+.filtered-text-box {
+    background: var(--surface-color);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-color);
+}
+del.judgment {
+    color: #e53e3e;
+    text-decoration-color: #e53e3e;
+    text-decoration-thickness: 2px;
+    opacity: 0.7;
+    background: rgba(229, 62, 62, 0.05);
+}
+span.fact {
+    color: #2f855a;
+    font-weight: 600;
+    background: rgba(72, 187, 120, 0.1);
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+[data-theme="dark"] del.judgment {
+    color: #fc8181;
+    text-decoration-color: #fc8181;
+}
+[data-theme="dark"] span.fact {
+    color: #68d391;
+}
+
+/* Palavras Riscáveis pelo Usuário */
+.strikeable-word {
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-radius: 3px;
+}
+.strikeable-word:hover {
+    background: rgba(229, 62, 62, 0.1);
+}
+.strikeable-word.user-struck {
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+    color: #e53e3e;
+    opacity: 0.6;
+}
+[data-theme="dark"] .strikeable-word:hover {
+    background: rgba(252, 129, 129, 0.2);
+}
+[data-theme="dark"] .strikeable-word.user-struck {
+    color: #fc8181;
+}
+
+/* Contexto de Famílias (Ex 6) */
+.family-context {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: rgba(150, 150, 150, 0.05);
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    text-align: left;
+}
+.family-context h6 {
+    margin: 0 0 5px 0;
+    color: var(--secondary-color);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.family-type-item {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: var(--text-color);
+}
+.family-type-item strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Lenses Selector (Ex 6) */
+.lens-selector-container {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 30px;
+    margin-top: 30px;
+}
+.lens-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 20px;
+    flex-wrap: wrap;
+}
+.lens-btn {
+    background: transparent;
+    border: 2px solid var(--border-color);
+    color: var(--text-muted);
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+.lens-btn:hover {
+    border-color: var(--secondary-color);
+    color: var(--text-color);
+}
+.lens-btn.active {
+    background: var(--secondary-color);
+    color: white;
+    border-color: var(--secondary-color);
+    box-shadow: 0 4px 15px rgba(201, 162, 99, 0.3);
+}
+.lens-content {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+.lens-content.active {
+    display: block;
+}
+.lens-question {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: var(--bg-color);
+    border-radius: 8px;
+    border: 1px dashed var(--primary-color);
+}
+
+/* Flashcards (Ex 7) */
+.flashcard-container {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 40px;
+    margin-top: 30px;
+    text-align: center;
+}
+.flashcard-progress {
+    font-family: var(--font-sans);
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+.flashcard-scene-box {
+    background: var(--bg-color);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 40px;
+    box-shadow: inset 0 2px 10px rgba(0,0,0,0.02);
+}
+.flashcard-types-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+.fc-type-badge {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Tooltip estético */
+.tooltip-container {
+    position: relative;
+    cursor: help;
+}
+.tooltip-text {
+    visibility: hidden;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    text-align: center;
+    padding: 8px 12px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 100;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    max-width: 250px;
+    opacity: 0;
+    transition: opacity 0.2s;
+    font-size: 0.8rem;
+    font-weight: normal;
+    pointer-events: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+.tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+.flashcard-reveal-area {
+    margin-bottom: 40px;
+}
+.fc-answer-box {
+    margin-top: 20px;
+    animation: fadeIn 0.4s ease;
 }
