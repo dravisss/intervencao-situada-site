@@ -151,69 +151,52 @@
         <div class="exercise-content" id="ex3">
             <div class="ex-header">
                 <h3>Exercício 3 — "A mesa dos actantes"</h3>
-                <span class="ex-meta">⏱️ 12 min por rodada + 5 min plenária | 🎯 Identificar actantes humanos e não-humanos</span>
+                <span class="ex-meta">⏱️ 12 min | 🎯 Identificar actantes humanos e não-humanos que afetam o sistema.</span>
             </div>
             
             <div class="callout callout-info">
                 <div class="callout-title">Instrução</div>
-                <p>Leiam a cena. Em 4 minutos, listem <strong>todos os actantes que fazem diferença</strong> na situação — não só pessoas. Tudo que age, que afeta, que empurra o sistema. Se algo modifica o estado de coisas, é um actante. Ganha quem achar mais.</p>
+                <p>Leiam a cena. Discutam quais elementos (pessoas, ferramentas, regras, espaços, tempos) estão <strong>agindo</strong> sobre o sistema e modificando o estado das coisas. Identifiquem todos os actantes relevantes.</p>
+                <p style="margin-top: 10px; font-size: 0.95rem; color: var(--secondary-color);"><strong>💡 Dica interativa:</strong> Clique nas palavras que você considera actantes para destacá-las em verde!</p>
             </div>
 
             <div class="scenario-block">
                 <h4>Cena A — O prazo e o café</h4>
-                <blockquote>
-                    <p>Uma equipe de 5 pessoas trabalha num projeto há 3 meses. O prazo está apertado. Sempre que alguém precisa de uma resposta rápida, manda um e-mail para o gestor, que responde em 2 a 3 dias. O sistema de OKRs da empresa exige que toda entrega seja aprovada por ele antes de seguir. A sala do time não tem parede — é um espaço aberto que qualquer pessoa atravessa. O café acabou e ninguém reabasteceu. A pressão está alta e, na última semana, duas pessoas pediram para trabalhar de casa.</p>
-                </blockquote>
+                <div class="mixed-text-box">
+                    <p>"Uma equipe de 5 pessoas trabalha num projeto há 3 meses. O prazo está apertado. Sempre que alguém precisa de uma resposta rápida, manda um e-mail para o gestor, que responde em 2 a 3 dias. O sistema de OKRs da empresa exige que toda entrega seja aprovada por ele antes de seguir. A sala do time não tem parede — é um espaço aberto que qualquer pessoa atravessa. O café acabou e ninguém reabasteceu. A pressão está alta e, na última semana, duas pessoas pediram para trabalhar de casa."</p>
+                </div>
+                
+                <div class="secure-reveal" style="margin-top: 20px; padding-top: 20px;">
+                    <button class="elegant-btn outline" onclick="requestReveal(this)">Revelar Actantes</button>
+                    <div class="reveal-confirm hidden">
+                        <span>⚠️ Revelar o filtro de actantes?</span>
+                        <button class="elegant-btn confirm" onclick="confirmReveal(this)">Sim</button>
+                        <button class="elegant-btn cancel" onclick="cancelReveal(this)">Cancelar</button>
+                    </div>
+                    <div class="reveal-content hidden">
+                        <div class="filtered-text-box">
+                            <p>"Uma <span class="fact">equipe de 5 pessoas</span> trabalha num <span class="fact">projeto</span> há <span class="fact">3 meses</span>. O <span class="fact">prazo</span> está apertado. Sempre que alguém precisa de uma resposta rápida, manda um <span class="fact">e-mail</span> para o <span class="fact">gestor</span>, que responde em <span class="fact">2 a 3 dias</span>. O <span class="fact">sistema de OKRs</span> da empresa exige que toda <span class="fact">entrega</span> seja aprovada por ele antes de seguir. A <span class="fact">sala do time</span> <span class="fact">não tem parede</span> — é um <span class="fact">espaço aberto</span> que qualquer pessoa atravessa. O <span class="fact">café</span> acabou e <span class="fact">ninguém reabasteceu</span>. A pressão está alta e, na <span class="fact">última semana</span>, <span class="fact">duas pessoas</span> pediram para <span class="fact">trabalhar de casa</span>."</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="scenario-block">
                 <h4>Cena B — A política e o desvio</h4>
-                <blockquote>
-                    <p>Uma empresa de médio porte tem uma política de home office: 3 dias presenciais, 2 dias remotos. A política foi definida pela diretoria e comunicada por e-mail. Na prática, o time de vendas vem 1 dia por semana porque "cliente não espera". O time de TI vem 5 dias porque "o sistema legado só funciona no escritório". O time de design vem 2 dias porque "a diretora de design prefere". Ninguém questiona a política oficialmente, mas todo mundo sabe que cada área faz o que quer. O RH não monitora o cumprimento. A política existe, não é seguida, e não é revisada.</p>
-                </blockquote>
-            </div>
-
-            <div class="secure-reveal">
-                <button class="elegant-btn outline" onclick="requestReveal(this)">Revelar Gabarito</button>
-                <div class="reveal-confirm hidden">
-                    <span>⚠️ Tem certeza? O gabarito será exibido para todo o grupo.</span>
-                    <button class="elegant-btn confirm" onclick="confirmReveal(this)">Sim, revelar</button>
-                    <button class="elegant-btn cancel" onclick="cancelReveal(this)">Cancelar</button>
+                <div class="mixed-text-box">
+                    <p>"Uma empresa de médio porte tem uma política de home office: 3 dias presenciais, 2 dias remotos. A política foi definida pela diretoria e comunicada por e-mail. Na prática, o time de vendas vem 1 dia por semana porque 'cliente não espera'. O time de TI vem 5 dias porque 'o sistema legado só funciona no escritório'. O time de design vem 2 dias porque 'a diretora de design prefere'. Ninguém questiona a política oficialmente, mas todo mundo sabe que cada área faz o que quer. O RH não monitora o cumprimento. A política existe, não é seguida, e não é revisada."</p>
                 </div>
-                <div class="reveal-content hidden">
-                    <div class="content-block">
-                        <div class="canvas-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                            <div>
-                                <h5>Cena A (Possíveis Actantes)</h5>
-                                <ul style="font-size: 0.95rem; color: var(--text-muted);">
-                                    <li>Equipe (5 atores humanos)</li>
-                                    <li>Gestor (ator humano)</li>
-                                    <li>Prazo apertado (actante expressivo)</li>
-                                    <li>E-mail (actante material - atrasa)</li>
-                                    <li>Tempo de resposta de 2-3 dias (gargalo)</li>
-                                    <li>Sistema de OKRs (define o que importa)</li>
-                                    <li>Regra de aprovação prévia (bloqueia)</li>
-                                    <li>Sala sem parede/open space (distrai)</li>
-                                    <li>Café que acabou (ausência desorganiza)</li>
-                                    <li>Pedidos de home office (sintoma)</li>
-                                    <li>Ausência de reposição do café (sintoma)</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h5>Cena B (Possíveis Actantes)</h5>
-                                <ul style="font-size: 0.95rem; color: var(--text-muted);">
-                                    <li>Diretoria (ator humano)</li>
-                                    <li>Política 3/2 (actante expressivo - regra)</li>
-                                    <li>E-mail de comunicação (meio limitante)</li>
-                                    <li>Times: vendas, TI, design (humanos)</li>
-                                    <li>"Cliente não espera" (justificativa/autorização)</li>
-                                    <li>Sistema legado (exige presença)</li>
-                                    <li>Preferência da diretora (regra informal)</li>
-                                    <li>Silêncio oficial (mantém o status quo)</li>
-                                    <li>RH (age não monitorando)</li>
-                                    <li>Gap entre regra e prática (tensão em si)</li>
-                                </ul>
-                            </div>
+                
+                <div class="secure-reveal" style="margin-top: 20px; padding-top: 20px;">
+                    <button class="elegant-btn outline" onclick="requestReveal(this)">Revelar Actantes</button>
+                    <div class="reveal-confirm hidden">
+                        <span>⚠️ Revelar o filtro de actantes?</span>
+                        <button class="elegant-btn confirm" onclick="confirmReveal(this)">Sim</button>
+                        <button class="elegant-btn cancel" onclick="cancelReveal(this)">Cancelar</button>
+                    </div>
+                    <div class="reveal-content hidden">
+                        <div class="filtered-text-box">
+                            <p>"Uma <span class="fact">empresa de médio porte</span> tem uma <span class="fact">política de home office</span>: <span class="fact">3 dias presenciais</span>, <span class="fact">2 dias remotos</span>. A política foi definida pela <span class="fact">diretoria</span> e comunicada por <span class="fact">e-mail</span>. Na prática, o <span class="fact">time de vendas</span> vem <span class="fact">1 dia por semana</span> porque <span class="fact">'cliente não espera'</span>. O <span class="fact">time de TI</span> vem <span class="fact">5 dias</span> porque <span class="fact">'o sistema legado'</span> só funciona no <span class="fact">escritório</span>. O <span class="fact">time de design</span> vem <span class="fact">2 dias</span> porque <span class="fact">'a diretora de design'</span> prefere. Ninguém questiona a política oficialmente, mas todo mundo sabe que <span class="fact">cada área</span> faz o que quer. O <span class="fact">RH</span> <span class="fact">não monitora</span> o cumprimento. A política existe, não é seguida, e não é revisada."</p>
                         </div>
                     </div>
                 </div>

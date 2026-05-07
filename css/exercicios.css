@@ -263,6 +263,12 @@ span.fact {
     color: #e53e3e;
     opacity: 0.6;
 }
+.strikeable-word.user-highlighted {
+    text-decoration: none;
+    background: rgba(47, 133, 90, 0.2);
+    color: #2f855a;
+    font-weight: 600;
+}
 [data-theme="dark"] .strikeable-word:hover {
     background: rgba(252, 129, 129, 0.2);
 }

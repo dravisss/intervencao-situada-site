@@ -33,10 +33,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }).join(' ');
     });
 
-    // Lógica para riscar as palavras ao clicar
+    // Lógica para marcar as palavras ao clicar (Riscado ou Highlight)
     document.addEventListener('click', (e) => {
         if (e.target.classList.contains('strikeable-word')) {
-            e.target.classList.toggle('user-struck');
+            // Verifica em qual exercício estamos para decidir o estilo
+            const exerciseId = e.target.closest('.exercise-content').id;
+            
+            if (exerciseId === 'ex3') {
+                e.target.classList.toggle('user-highlighted');
+            } else if (exerciseId === 'ex5') {
+                e.target.classList.toggle('user-struck');
+            }
         }
     });
 });
