@@ -1,43 +1,88 @@
 /* Estilos específicos para a página de Exercícios */
 
+.exercise-page {
+    background:
+        radial-gradient(circle at 12% 0%, rgba(196, 139, 78, 0.16), transparent 30rem),
+        radial-gradient(circle at 90% 10%, rgba(26, 111, 105, 0.12), transparent 34rem),
+        var(--bg-color);
+}
+
+.exercise-shell {
+    width: min(1120px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 72px 0 96px;
+}
+
+.exercise-page .section-header {
+    max-width: 880px;
+    margin: 0 auto 34px;
+    text-align: center;
+}
+
+.exercise-page .section-header h2 {
+    font-size: clamp(2.6rem, 5vw, 4.4rem);
+    letter-spacing: -0.06em;
+    line-height: 0.98;
+    margin-bottom: 18px;
+}
+
+.exercise-page .section-header p {
+    max-width: 680px;
+    margin: 0 auto;
+    color: var(--text-muted);
+    font-size: 1.12rem;
+}
+
 .exercise-tabs {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    position: sticky;
+    top: 78px;
+    z-index: 90;
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
     gap: 10px;
-    margin-bottom: 40px;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 20px;
+    max-width: 100%;
+    margin: 0 auto 44px;
+    padding: 14px;
+    overflow: visible;
+    border: 1px solid var(--border-color);
+    border-radius: 28px;
+    background: var(--surface-color);
+    background: color-mix(in srgb, var(--surface-color) 88%, transparent);
+    box-shadow: 0 18px 45px rgba(44, 51, 48, 0.08);
+    backdrop-filter: blur(14px);
 }
 
 .tab-btn {
+    min-width: 0;
     background: transparent;
-    border: none;
+    border: 1px solid transparent;
     color: var(--text-muted);
     font-family: var(--font-sans);
-    font-weight: 600;
-    font-weight: 600;
-    font-size: 0.85rem;
-    padding: 8px 14px;
+    font-weight: 800;
+    font-size: clamp(0.74rem, 0.9vw, 0.92rem);
+    line-height: 1.2;
+    padding: 12px 10px;
     cursor: pointer;
-    border-radius: 30px;
-    white-space: nowrap;
+    border-radius: 18px;
+    white-space: normal;
     transition: all 0.3s ease;
-    margin-bottom: 5px;
+    text-align: center;
 }
 
 .tab-btn:hover {
     color: var(--text-color);
-    background: rgba(150, 150, 150, 0.1);
+    background: rgba(26, 111, 105, 0.07);
 }
 
 .tab-btn.active {
-    background: rgba(201, 162, 99, 0.15);
-    color: var(--secondary-color);
-    border: 1px solid rgba(201, 162, 99, 0.4);
+    background: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 20px rgba(26, 111, 105, 0.22);
 }
 [data-theme="dark"] .tab-btn.active {
-    background: rgba(201, 162, 99, 0.1);
+    color: #071312;
+    box-shadow: 0 8px 22px rgba(79, 209, 197, 0.18);
 }
 
 .exercise-content {
@@ -55,7 +100,46 @@
 }
 
 .ex-header {
-    margin-bottom: 30px;
+    max-width: 900px;
+    margin: 0 auto 28px;
+    padding: 30px 34px;
+    background: linear-gradient(135deg, rgba(26, 111, 105, 0.10), rgba(196, 139, 78, 0.10));
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    box-shadow: 0 14px 36px rgba(44, 51, 48, 0.06);
+}
+
+.ex-header h3 {
+    margin: 0;
+    font-size: clamp(1.8rem, 3vw, 2.65rem);
+    letter-spacing: -0.035em;
+}
+
+.exercise-body {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.exercise-body > p:first-child strong {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--secondary-color);
+    padding: 5px 10px;
+    border: 1px solid rgba(196, 139, 78, 0.32);
+    border-radius: 999px;
+    background: rgba(196, 139, 78, 0.08);
+}
+
+.exercise-body > h3 {
+    margin-top: 42px;
+    padding-top: 26px;
+    border-top: 1px solid var(--border-color);
+    color: var(--primary-color);
 }
 
 .ex-meta {
@@ -157,10 +241,11 @@
 
 /* Secure Reveal Component */
 .secure-reveal {
-    margin-top: 40px;
+    margin: 44px auto 0;
     border-top: 1px dashed var(--border-color);
     padding-top: 30px;
     text-align: center;
+    max-width: 900px;
 }
 
 .reveal-confirm {
@@ -192,6 +277,10 @@
 .reveal-content {
     margin-top: 20px;
     text-align: left;
+}
+
+.reveal-content blockquote {
+    margin-bottom: 0;
 }
 
 .hidden {
@@ -442,4 +531,502 @@ span.fact {
 .fc-answer-box {
     margin-top: 20px;
     animation: fadeIn 0.4s ease;
+}
+
+/* Perturbações Cards */
+.pert-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 1fr));
+    gap: 22px;
+    margin: 28px 0 34px;
+}
+
+.pert-card {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    padding: 28px;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 28px rgba(44, 51, 48, 0.045);
+}
+
+.exercise-body > .pert-card {
+    margin: 22px 0;
+}
+
+.exercise-body > .pert-card + .pert-card {
+    margin-top: 26px;
+}
+
+.pert-card::before {
+    content: '';
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 5px;
+    background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.pert-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-4px);
+    box-shadow: 0 18px 42px rgba(44, 51, 48, 0.09);
+}
+
+.pert-card:hover::before,
+.pert-card.selected::before {
+    opacity: 1;
+}
+
+.pert-card.full {
+    width: 100%;
+}
+
+.pert-card-title {
+    font-family: var(--font-sans);
+    font-weight: 800;
+    font-size: 1.08rem;
+    color: var(--text-color);
+    margin-bottom: 14px;
+    letter-spacing: -0.015em;
+}
+
+.pert-card-text {
+    font-size: 1rem;
+    line-height: 1.68;
+    color: var(--text-muted);
+}
+
+.pert-card-text p {
+    margin-bottom: 1em;
+    font-size: 1rem;
+}
+
+.pert-card-text p:last-child,
+.pert-card-text ul:last-child {
+    margin-bottom: 0;
+}
+
+.pert-card-text ul {
+    padding-left: 1.1rem;
+    margin: 0 0 1rem;
+}
+
+.exercise-body > .content-block,
+.exercise-body > .scenario,
+.exercise-body > .highlight-box {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.exercise-body > .content-block + .content-block {
+    margin-top: 28px;
+}
+
+.pert-card-sub {
+    font-size: 0.85rem;
+    color: var(--secondary-color);
+    margin-top: 12px;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.pert-card.selected {
+    border-color: var(--primary-color);
+    background: rgba(26, 111, 105, 0.05);
+    box-shadow: 0 18px 42px rgba(26, 111, 105, 0.10);
+}
+
+[data-theme="dark"] .pert-card.selected {
+    background: rgba(79, 209, 197, 0.08);
+}
+
+.pert-card.discarded {
+    opacity: 0.35;
+    text-decoration: line-through;
+}
+
+.pert-card.discarded .pert-card-title,
+.pert-card.discarded .pert-card-text,
+.pert-card.discarded .pert-card-sub {
+    text-decoration: line-through;
+}
+
+/* Scenario */
+.scenario {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    padding: 28px;
+    margin: 24px 0;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--text-muted);
+    box-shadow: 0 8px 28px rgba(44, 51, 48, 0.045);
+}
+
+.scenario.compact {
+    padding: 26px;
+}
+
+.scenario h4 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+.scenario strong {
+    color: var(--text-color);
+}
+
+.scenario p {
+    margin-bottom: 1em;
+    font-size: 1rem;
+}
+
+/* Steps */
+.step {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin: 12px 0;
+    border-left: 3px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.step.active {
+    border-left-color: var(--primary-color);
+}
+
+.step-num {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-family: var(--font-sans);
+}
+
+.step h4 {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin: 6px 0 8px;
+}
+
+.step p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Highlight Box */
+.highlight-box {
+    background: linear-gradient(135deg, rgba(196, 139, 78, 0.10), rgba(26, 111, 105, 0.06));
+    border: 1px solid rgba(196, 139, 78, 0.30);
+    border-left: 5px solid var(--secondary-color);
+    border-radius: 16px;
+    padding: 22px 26px;
+    margin: 24px 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+.highlight-box p:last-child {
+    margin-bottom: 0;
+}
+
+.highlight-box strong {
+    color: var(--text-color);
+}
+
+/* Exercise Hub */
+.exercise-hub {
+    width: min(100% - 40px, 1120px);
+    margin: 0 auto;
+    padding: 72px 0 96px;
+}
+
+.exercise-hub-hero {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(26, 111, 105, 0.18);
+    border-radius: 30px;
+    padding: clamp(42px, 7vw, 76px);
+    background:
+        radial-gradient(circle at 8% 10%, rgba(196, 139, 78, 0.20), transparent 28%),
+        radial-gradient(circle at 92% 18%, rgba(26, 111, 105, 0.18), transparent 30%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(247, 244, 236, 0.78));
+    box-shadow: 0 28px 80px rgba(44, 51, 48, 0.10);
+    text-align: center;
+}
+
+[data-theme="dark"] .exercise-hub-hero {
+    background:
+        radial-gradient(circle at 8% 10%, rgba(251, 191, 36, 0.14), transparent 28%),
+        radial-gradient(circle at 92% 18%, rgba(79, 209, 197, 0.12), transparent 30%),
+        linear-gradient(135deg, rgba(30, 41, 59, 0.92), rgba(17, 20, 20, 0.88));
+}
+
+.exercise-hub-kicker,
+.choice-eyebrow {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--secondary-color);
+    margin-bottom: 16px;
+}
+
+.exercise-hub-hero h1 {
+    font-size: clamp(2.8rem, 7vw, 5.6rem);
+    letter-spacing: -0.06em;
+    line-height: 0.95;
+    margin: 0 auto 24px;
+}
+
+.exercise-hub-hero p {
+    max-width: 760px;
+    margin: 0 auto;
+    color: var(--text-muted);
+    font-size: clamp(1.08rem, 2vw, 1.32rem);
+}
+
+.exercise-choice-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    margin-top: 36px;
+}
+
+.exercise-choice-card {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    min-height: 430px;
+    flex-direction: column;
+    padding: 38px;
+    border: 1px solid var(--border-color);
+    border-radius: 26px;
+    background: var(--surface-color);
+    box-shadow: 0 16px 46px rgba(44, 51, 48, 0.08);
+    color: var(--text-color);
+    text-decoration: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.exercise-choice-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 8px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+.exercise-choice-card::after {
+    content: "";
+    position: absolute;
+    right: -90px;
+    bottom: -110px;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background: rgba(26, 111, 105, 0.08);
+}
+
+.exercise-choice-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(26, 111, 105, 0.35);
+    box-shadow: 0 28px 70px rgba(44, 51, 48, 0.14);
+}
+
+.perturbation-choice::before {
+    background: linear-gradient(90deg, #e65100, var(--secondary-color));
+}
+
+.perturbation-choice::after {
+    background: rgba(196, 139, 78, 0.12);
+}
+
+.exercise-choice-card h2 {
+    position: relative;
+    z-index: 1;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    letter-spacing: -0.045em;
+    margin: 0 0 18px;
+}
+
+.exercise-choice-card p {
+    position: relative;
+    z-index: 1;
+    color: var(--text-muted);
+    font-size: 1.08rem;
+    line-height: 1.7;
+}
+
+.choice-meta {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 28px;
+}
+
+.choice-meta span {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    padding: 8px 12px;
+    color: var(--text-muted);
+    font-family: var(--font-sans);
+    font-size: 0.84rem;
+    font-weight: 700;
+}
+
+.choice-link {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    margin-top: 28px;
+    color: var(--primary-color);
+    font-family: var(--font-sans);
+    font-weight: 800;
+}
+
+.exercise-hub-note {
+    margin-top: 36px;
+    border: 1px solid rgba(196, 139, 78, 0.30);
+    border-left: 6px solid var(--secondary-color);
+    border-radius: 20px;
+    padding: 28px 32px;
+    background: rgba(196, 139, 78, 0.08);
+}
+
+.exercise-hub-note h2 {
+    font-size: 1.2rem;
+    letter-spacing: -0.02em;
+    margin: 0 0 8px;
+}
+
+.exercise-hub-note p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Canvas Detail */
+.canvas-detail {
+    display: none;
+    margin-top: 24px;
+}
+
+.canvas-detail.show {
+    display: block;
+}
+
+.canvas-pre {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    white-space: pre;
+    overflow-x: auto;
+    background: transparent !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+}
+
+[data-theme="dark"] .canvas-pre {
+    color: #94a3b8;
+}
+
+/* Tags for canvas modalidades */
+.tag-imediata,
+.tag-experimento,
+.tag-projeto,
+.tag-aposta {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tag-imediata {
+    background: #b71c1c;
+    color: #ffcdd2;
+}
+
+.tag-experimento {
+    background: #1b5e20;
+    color: #c8e6c9;
+}
+
+.tag-projeto {
+    background: #0d47a1;
+    color: #bbdefb;
+}
+
+.tag-aposta {
+    background: #e65100;
+    color: #ffe0b2;
+}
+
+@media (max-width: 768px) {
+    .site-header .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+    .nav-links {
+        justify-content: flex-start;
+        gap: 10px 14px;
+    }
+    .exercise-shell {
+        width: min(100% - 28px, 1120px);
+        padding-top: 44px;
+    }
+    .exercise-tabs {
+        top: 118px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        border-radius: 18px;
+    }
+    .ex-header {
+        padding: 24px;
+    }
+    .pert-card {
+        padding: 22px;
+    }
+    .scenario {
+        padding: 22px;
+    }
+    .exercise-hub {
+        width: min(100% - 28px, 1120px);
+        padding-top: 44px;
+    }
+    .exercise-choice-grid {
+        grid-template-columns: 1fr;
+    }
+    .exercise-choice-card {
+        min-height: auto;
+        padding: 30px;
+    }
+    .step {
+        padding: 14px 18px;
+    }
 }

@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios de Tensão Situada | Intervenção Situada</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/exercicios.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="logo">Intervenção Situada</a>
+            <nav class="nav-links">
+                <a href="revisao-critica.html">Revisão Crítica</a>
+                <a href="tensao-situada.html">Tensão Situada</a>
+                <a href="perturbacoes.html">Perturbações</a>
+                <a href="exercicios.html" class="active">Exercícios</a>
+                <a href="exemplos-canvas.html">Exemplos</a>
+            </nav>
+        </div>
+    </header>
+
+    <button id="theme-toggle" class="theme-toggle" title="Alternar tema">🌙</button>
+    <button id="back-to-top" class="back-to-top" title="Voltar ao topo">↑</button>
+
+    <main class="container" style="padding-top: 60px; padding-bottom: 80px;">
+        <div class="section-header">
+            <h2>Exercícios de Tensão Situada</h2>
+            <p>Dinâmicas de 10-15 minutos para breakout rooms. Pratique identificar tensões, descrevê-las sem julgamento e distinguir o que é tensão situada do que é reclamação genérica.</p>
+        </div>
+        
+        <div class="exercise-tabs">
+            <button class="tab-btn active" data-target="ex1">1. Tensão?</button>
+            <button class="tab-btn" data-target="ex2">2. Título ou Subtítulo?</button>
+            <button class="tab-btn" data-target="ex3">3. Actantes</button>
+            <button class="tab-btn" data-target="ex4">4. Expande/Contrai</button>
+            <button class="tab-btn" data-target="ex5">5. Reescrever</button>
+            <button class="tab-btn" data-target="ex6">6. Lentes</button>
+            <button class="tab-btn" data-target="ex7">7. Baralho</button>
+        </div>
+
+        <!-- EXERCÍCIO 1 -->
+        <div class="exercise-content active" id="ex1">
+            <div class="ex-header">
+                <h3>Exercício 1 — "Isso é uma tensão?"</h3>
+                <span class="ex-meta">⏱️ 8 min em breakout + 5 min plenária | 🎯 Distinguir tensão de reclamação</span>
+            </div>
+            
+            <div class="callout callout-info">
+                <div class="callout-title">Instrução</div>
+                <p>Vocês recebem 4 descrições. Três são reclamações genéricas disfarçadas de tensão. <strong>Uma é uma tensão situada de verdade.</strong> Identifiquem qual é a tensão real e expliquem o que falta nas outras.</p>
+            </div>
+
+            <div class="cards-grid" style="margin-top: 30px;">
+                <div class="elegant-card ex-card">
+                    <span class="card-tag">CARTÃO A</span>
+                    <p>"Existe uma desconexão entre o que a liderança fala e o que ela faz. Eles dizem que valorizam transparência, mas as decisões estratégicas continuam sendo tomadas a portas fechadas. As pessoas percebem isso e ficam desconfiadas. Falta coerência entre discurso e prática."</p>
+                </div>
+                <div class="elegant-card ex-card">
+                    <span class="card-tag">CARTÃO B</span>
+                    <p>"A reunião semanal de status existe há dois anos. Toda semana 12 pessoas se reúnem por 1 hora. Ninguém consegue dizer o que mudou por causa dessa reunião. Mas ela está na agenda de todo mundo e ninguém a cancelou porque 'sempre foi assim'."</p>
+                </div>
+                <div class="elegant-card ex-card">
+                    <span class="card-tag">CARTÃO C</span>
+                    <p>"O processo de avaliação de desempenho desconsidera o contexto de cada time. O time de produto trabalha com entregas curtas e iteração rápida. O time de infra trabalha com estabilidade e prevenção. Ambos são avaliados com a mesma rubrica. O RH não revisa o modelo."</p>
+                </div>
+                <div class="elegant-card ex-card">
+                    <span class="card-tag">CARTÃO D</span>
+                    <p>"A cultura organizacional é muito hierárquica e burocrática. As pessoas não têm autonomia para tomar decisões simples. Isso gera frustração e desengajamento. Precisamos de uma cultura mais ágil e horizontal."</p>
+                </div>
+            </div>
+
+            <div class="secure-reveal">
+                <button class="elegant-btn outline" onclick="requestReveal(this)">Revelar Gabarito</button>
+                <div class="reveal-confirm hidden">
+                    <span>⚠️ Tem certeza? O gabarito será exibido para todo o grupo.</span>
+                    <button class="elegant-btn confirm" onclick="confirmReveal(this)">Sim, revelar</button>
+                    <button class="elegant-btn cancel" onclick="cancelReveal(this)">Cancelar</button>
+                </div>
+                <div class="reveal-content hidden">
+                    <div class="content-block">
+                        <p><strong>Resposta:</strong> B e C são tensões situadas. A e D são genéricas.</p>
+                        <ul>
+                            <li style="margin-bottom: 10px;"><strong>Por que B é tensão:</strong> tem elemento concreto (reunião de 2 anos, 12 pessoas, 1 hora), padrão observável (ninguém cancela) e vazio identificável (ninguém sabe o que mudou). Específica, localizada, verificável.</li>
+                            <li style="margin-bottom: 10px;"><strong>Por que C é tensão:</strong> tem dois actantes concretos (times com naturezas diferentes), mecanismo específico (mesma rubrica) e bloqueio identificável (RH não revisa). Dá para intervir.</li>
+                            <li style="margin-bottom: 10px;"><strong>Por que A não é:</strong> "Liderança", "decisões", "portas fechadas" são vagas. Qual decisão? Que porta? Falta especificidade. É uma reclamação com "roupa" de tensão.</li>
+                            <li><strong>Por que D não é:</strong> É um manifesto. "Cultura hierárquica", "burocrática", "frustração" são diagnósticos prontos, não composições observadas. Não diz o que acontece — diz o que se acha.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EXERCÍCIO 2 -->
+        <div class="exercise-content" id="ex2">
+            <div class="ex-header">
+                <h3>Exercício 2 — "Título ou subtítulo?"</h3>
+                <span class="ex-meta">⏱️ 10 min em breakout + 5 min plenária | 🎯 Aprender a diferença entre provocativo e factual</span>
+            </div>
+            
+            <div class="callout callout-info">
+                <div class="callout-title">Instrução</div>
+                <p>Para cada cenário há um título e dois possíveis subtítulos. <strong>Apenas um subtítulo é factual.</strong> O outro escorrega para julgamento. Escolham o correto e expliquem o porquê.</p>
+            </div>
+
+            <div class="scenario-block">
+                <h4>Cenário 1 — Título: "O quintal que virou depósito"</h4>
+                <div class="options-group">
+                    <div class="option-card"><strong>A:</strong> "A área de suporte foi criada como projeto temporário há 3 anos e nunca foi integrada à estrutura formal."</div>
+                    <div class="option-card"><strong>B:</strong> "A área de suporte é negligenciada pela liderança e precisa ser reestruturada urgentemente."</div>
+                </div>
+            </div>
+
+            <div class="scenario-block">
+                <h4>Cenário 2 — Título: "Prometemos antes de saber se dá"</h4>
+                <div class="options-group">
+                    <div class="option-card"><strong>A:</strong> "Vendas promete prazos sem consultar produto, que descobre os prazos já acordados com o cliente."</div>
+                    <div class="option-card"><strong>B:</strong> "Vendas está sob pressão e promete prazos que produto não consegue cumprir, gerando conflito."</div>
+                </div>
+            </div>
+
+            <div class="scenario-block">
+                <h4>Cenário 3 — Título: "O protocolo que ninguém leu"</h4>
+                <div class="options-group">
+                    <div class="option-card"><strong>A:</strong> "78% dos funcionários nunca leram a política de conduta de 47 páginas atualizada em 2021."</div>
+                    <div class="option-card"><strong>B:</strong> "A política de conduta é longa e burocrática, ninguém tem paciência de ler 47 páginas."</div>
+                </div>
+            </div>
+
+            <div class="secure-reveal">
+                <button class="elegant-btn outline" onclick="requestReveal(this)">Revelar Gabarito</button>
+                <div class="reveal-confirm hidden">
+                    <span>⚠️ Tem certeza? O gabarito será exibido para todo o grupo.</span>
+                    <button class="elegant-btn confirm" onclick="confirmReveal(this)">Sim, revelar</button>
+                    <button class="elegant-btn cancel" onclick="cancelReveal(this)">Cancelar</button>
+                </div>
+                <div class="reveal-content hidden">
+                    <div class="content-block">
+                        <p><strong>Cenário 1:</strong> A é o correto. B é opinativo — "negligenciada" e "urgentemente" são julgamentos, não fatos.</p>
+                        <p><strong>Cenário 2:</strong> A é o correto. B escorrega em "sob pressão" (interpretação) e "conflito" (julgamento). A descreve o mecanismo: promete sem consultar.</p>
+                        <p><strong>Cenário 3:</strong> A é o correto. B é opinativo — "longa", "burocrática", "ninguém tem paciência". A descreve: 78%, 47 páginas, 2021.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EXERCÍCIO 3 -->
+        <div class="exercise-content" id="ex3">
+            <div class="ex-header">
+                <h3>Exercício 3 — "A mesa dos actantes"</h3>
+                <span class="ex-meta">⏱️ 12 min | 🎯 Identificar actantes humanos e não-humanos que afetam o sistema.</span>
+            </div>
+            
+            <div class="callout callout-info">
+                <div class="callout-title">Instrução</div>
+                <p>Leiam a cena. Discutam quais elementos (pessoas, ferramentas, regras, espaços, tempos) estão <strong>agindo</strong> sobre o sistema e modificando o estado das coisas. Identifiquem todos os actantes relevantes.</p>
+                <p style="margin-top: 10px; font-size: 0.95rem; color: var(--secondary-color);"><strong>💡 Dica interativa:</strong> Clique nas palavras que você considera actantes para destacá-las em verde!</p>
+            </div>
+
+            <div class="scenario-block">
+                <h4>Cena A — O prazo e o café</h4>
+                <div class="mixed-text-box">
+                    <p>"Uma equipe de 5 pessoas trabalha num projeto há 3 meses. O prazo está apertado. Sempre que alguém precisa de uma resposta rápida, manda um e-mail para o gestor, que responde em 2 a 3 dias. O sistema de OKRs da empresa exige que toda entrega seja aprovada por ele antes de seguir. A sala do time não tem parede — é um espaço aberto que qualquer pessoa atravessa. O café acabou e ninguém reabasteceu. A pressão está alta e, na última semana, duas pessoas pediram para trabalhar de casa."</p>
+                </div>
+                
+                <div class="secure-reveal" style="margin-top: 20px; padding-top: 20px;">
+                    <button class="elegant-btn outline" onclick="requestReveal(this)">Revelar Actantes</button>
+                    <div class="reveal-confirm hidden">
+                        <span>⚠️ Revelar o filtro de actantes?</span>
+                        <button class="elegant-btn confirm" onclick="confirmReveal(this)">Sim</button>
+                        <button class="elegant-btn cancel" onclick="cancelReveal(this)">Cancelar</button>
+                    </div>
+                    <div class="reveal-content hidden">
+                        <div class="filtered-text-box">
+                            <p>"Uma <span class="fact">equipe de 5 pessoas</span> trabalha num <span class="fact">projeto</span> há <span class="fact">3 meses</span>. O <span class="fact">prazo</span> está apertado. Sempre que alguém precisa de uma resposta rápida, manda um <span class="fact">e-mail</span> para o <span class="fact">gestor</span>, que responde em <span class="fact">2 a 3 dias</span>. O <span class="fact">sistema de OKRs</span> da empresa exige que toda <span class="fact">entrega</span> seja aprovada por ele antes de seguir. A <span class="fact">sala do time</span> <span class="fact">não tem parede</span> — é um <span class="fact">espaço aberto</span> que qualquer pessoa atravessa. O <span class="fact">café</span> acabou e <span class="fact">ninguém reabasteceu</span>. A pressão está alta e, na <span class="fact">última semana</span>, <span class="fact">duas pessoas</span> pediram para <span class="fact">trabalhar de casa</span>."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scenario-block">
+                <h4>Cena B — A política e o desvio</h4>
+                <div class="mixed-text-box">
+                    <p>"Uma empresa de médio porte tem uma política de home office: 3 dias presenciais, 2 dias remotos. A política foi definida pela diretoria e comunicada por e-mail. Na prática, o time de vendas vem 1 dia por semana porque 'cliente não espera'. O time de TI vem 5 dias porque 'o sistema legado só funciona no escritório'. O time de design vem 2 dias porque 'a diretora de design prefere'. Ninguém questiona a política oficialmente, mas todo mundo sabe que cada área faz o que quer. O RH não monitora o cumprimento. A política existe, não é seguida, e não é revisada."</p>
+                </div>
+                
+                <div class="secure-reveal" style="margin-top: 20px; padding-top: 20px;">
+                    <button class="elegant-btn outline" onclick="requestReveal(this)">Revelar Actantes</button>
+                    <div class="reveal-confirm hidden">
+                        <span>⚠️ Revelar o filtro de actantes?</span>
+                        <button class="elegant-btn confirm" onclick="confirmReveal(this)">Sim</button>
+                        <button class="elegant-btn cancel" onclick="cancelReveal(this)">Cancelar</button>
+                    </div>
+                    <div class="reveal-content hidden">
+                        <div class="filtered-text-box">
+                            <p>"Uma <span class="fact">empresa de médio porte</span> tem uma <span class="fact">política de home office</span>: <span class="fact">3 dias presenciais</span>, <span class="fact">2 dias remotos</span>. A política foi definida pela <span class="fact">diretoria</span> e comunicada por <span class="fact">e-mail</span>. Na prática, o <span class="fact">time de vendas</span> vem <span class="fact">1 dia por semana</span> porque <span class="fact">'cliente não espera'</span>. O <span class="fact">time de TI</span> vem <span class="fact">5 dias</span> porque <span class="fact">'o sistema legado'</span> só funciona no <span class="fact">escritório</span>. O <span class="fact">time de design</span> vem <span class="fact">2 dias</span> porque <span class="fact">'a diretora de design'</span> prefere. Ninguém questiona a política oficialmente, mas todo mundo sabe que <span class="fact">cada área</span> faz o que quer. O <span class="fact">RH</span> <span class="fact">não monitora</span> o cumprimento. A política existe, não é seguida, e não é revisada."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EXERCÍCIO 4 -->
+        <div class="exercise-content" id="ex4">
+            <div class="ex-header">
+                <h3>Exercício 4 — "O que expande, o que contrai?"</h3>
+                <span class="ex-meta">⏱️ 10 min em breakout + 5 min plenária | 🎯 Analisar capacidades a partir da tensão</span>
+            </div>
+            
+            <div class="callout callout-info">
+                <div class="callout-title">Instrução</div>
+                <p>Usando a Cena A ou a Cena B do exercício 3, respondam: O que esta <strong>configuração específica</strong> (não as pessoas) <strong>aumenta</strong> a capacidade de fazer? O que ela <strong>diminui</strong>? (Não respondam "a equipe está desmotivada" - sejam específicos sobre capacidades).</p>
+            </div>
+
+            <div class="secure-reveal">
+                <button class="elegant-btn outline" onclick="requestReveal(this)">Revelar Gabarito</button>
+                <div class="reveal-confirm hidden">
+                    <span>⚠️ Tem certeza? O gabarito será exibido para todo o grupo.</span>
+                    <button class="elegant-btn confirm" onclick="confirmReveal(this)">Sim, revelar</button>
+                    <button class="elegant-btn cancel" onclick="cancelReveal(this)">Cancelar</button>
+                </div>
+                <div class="reveal-content hidden">
+                    <div class="content-block">
+                        <div class="canvas-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div>
+                                <h5>Exemplo Cena A</h5>
+                                <p style="font-size: 0.95rem; margin-bottom: 5px;"><strong>AUMENTA:</strong> capacidade de controle do gestor; rastreamento via e-mail; capacidade de justificar atrasos (o prazo vira desculpa).</p>
+                                <p style="font-size: 0.95rem;"><strong>DIMINUI:</strong> capacidade de resposta rápida; decisão autônoma; colaboração espontânea (open space distrai); reposição de recursos (café); retenção.</p>
+                            </div>
+                            <div>
+                                <h5>Exemplo Cena B</h5>
+                                <p style="font-size: 0.95rem; margin-bottom: 5px;"><strong>AUMENTA:</strong> capacidade de adaptação local; capacidade de evitar conflito direto; capacidade de manter a política formal intacta (sem revisar).</p>
+                                <p style="font-size: 0.95rem;"><strong>DIMINUI:</strong> coerência organizacional; confiança nas regras formais; capacidade de planejamento; justiça percebida entre áreas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EXERCÍCIO 5 -->
+        <div class="exercise-content" id="ex5">
+            <div class="ex-header">
+                <h3>Exercício 5 — "O Filtro de Julgamento"</h3>
+                <span class="ex-meta">⏱️ 12 min em breakout + 5 min plenária | 🎯 Aprender a separar fatos observáveis de avaliações morais.</span>
+            </div>
+            
+            <div class="callout callout-info">
+                <div class="callout-title">Instrução</div>
+                <p>Abaixo estão 5 relatos comuns em organizações que misturam <strong>fatos</strong> (dados concretos, processos, actantes) com <strong>julgamentos</strong> (opiniões, intenções atribuídas, adjetivos morais). Para cada um, leiam juntos e discutam o que deve ser riscado. Salvem apenas os fatos que configuram a tensão situada.</p>
+                <p style="margin-top: 10px; font-size: 0.95rem; color: var(--secondary-color);"><strong>💡 Dica interativa:</strong> Clique nas palavras do relato para riscá-las você mesmo antes de revelar o filtro!</p>
+            </div>
+
+            <!-- RELATO A -->
+            <div class="scenario-block">
+                <h4>Relato A</h4>
+                <div class="mixed-text-box">
+                    <p>"O gestor da área não confia no time e é muito centralizador. Toda decisão operacional — incluindo tarefas que o time já executou antes — precisa de aprovação dele, que enrola absurdamente e só responde em 2 a 3 dias. O time espera de braços cruzados porque não há um limite de alçada definido. Isso mostra que a delegação não funciona de verdade na empresa."</p>
+                </div>
+                <div class="secure-reveal" style="margin-top: 20px; padding-top: 20px;">
+                    <button class="elegant-btn outline" onclick="requestReveal(this)">Revelar Filtro</button>
+                    <div class="reveal-confirm hidden">
+                        <span>⚠️ Revelar o filtro?</span>
+                        <button class="elegant-btn confirm" onclick="confirmReveal(this)">Sim</button>
+                        <button class="elegant-btn cancel" onclick="cancelReveal(this)">Cancelar</button>
+                    </div>
+                    <div class="reveal-content hidden">
+                        <div class="filtered-text-box">
+                            <p><del class="judgment">O gestor da área não confia no time e é muito centralizador.</del> <span class="fact">Toda decisão operacional — incluindo tarefas que o time já executou antes — precisa de aprovação dele</span>, <del class="judgment">que enrola absurdamente e só</del> <span class="fact">responde em 2 a 3 dias. O time espera</span> <del class="judgment">de braços cruzados</del> <span class="fact">porque não há um limite de alçada definido.</span> <del class="judgment">Isso mostra que a delegação não funciona de verdade na empresa.</del></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RELATO B -->
+            <div class="scenario-block">
+                <h4>Relato B</h4>
+                <div class="mixed-text-box">
+                    <p>"O time de marketing é desorganizado e não prioriza as demandas. Eles têm 5 entregas simultâneas neste mês com o mesmo prazo e nenhuma priorização explícita. O resultado é que as entregas chegam com 2 a 3 dias de atraso, culpa da falta de liderança na área que faz as pessoas trabalharem sem plano. Não há ritual de planejamento semanal visível."</p>
+                </div>
+                <div class="secure-reveal" style="margin-top: 20px; padding-top: 20px;">
+                    <button class="elegant-btn outline" onclick="requestReveal(this)">Revelar Filtro</button>
+                    <div class="reveal-confirm hidden">
+                        <span>⚠️ Revelar o filtro?</span>
+                        <button class="elegant-btn confirm" onclick="confirmReveal(this)">Sim</button>
+                        <button class="elegant-btn cancel" onclick="cancelReveal(this)">Cancelar</button>
+                    </div>
+                    <div class="reveal-content hidden">
+                        <div class="filtered-text-box">
+                            <p><del class="judgment">O time de marketing é desorganizado e não prioriza as demandas.</del> <span class="fact">Eles têm 5 entregas simultâneas neste mês com o mesmo prazo e nenhuma priorização explícita.</span> <del class="judgment">O resultado é que as</del> <span class="fact">entregas chegam com 2 a 3 dias de atraso</span>, <del class="judgment">culpa da falta de liderança na área que faz as pessoas trabalharem sem plano.</del> <span class="fact">Não há ritual de planejamento semanal visível.</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RELATO C -->
+            <div class="scenario-block">
+                <h4>Relato C</h4>
+                <div class="mixed-text-box">
+                    <p>"A liderança tem um discurso hipócrita sobre inovação. A empresa declara valorizar inovação, mas na prática ninguém deixa tentar nada novo. Projetos novos precisam de aprovação de um comitê mensal burocrático. Em 6 meses, 4 propostas submetidas, nenhuma aprovada. O comitê não publica razões das recusas porque falta transparência."</p>
+                </div>
+                <div class="secure-reveal" style="margin-top: 20px; padding-top: 20px;">
+                    <button class="elegant-btn outline" onclick="requestReveal(this)">Revelar Filtro</button>
+                    <div class="reveal-confirm hidden">
+                        <span>⚠️ Revelar o filtro?</span>
+                        <button class="elegant-btn confirm" onclick="confirmReveal(this)">Sim</button>
+                        <button class="elegant-btn cancel" onclick="cancelReveal(this)">Cancelar</button>
+                    </div>
+                    <div class="reveal-content hidden">
+                        <div class="filtered-text-box">
+                            <p><del class="judgment">A liderança tem um discurso hipócrita sobre inovação.</del> <span class="fact">A empresa declara valorizar inovação</span>, <del class="judgment">mas na prática ninguém deixa tentar nada novo.</del> <span class="fact">Projetos novos precisam de aprovação de um comitê mensal</span> <del class="judgment">burocrático</del>. <span class="fact">Em 6 meses, 4 propostas submetidas, nenhuma aprovada. O comitê não publica razões das recusas</span> <del class="judgment">porque falta transparência.</del></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RELATO D -->
+            <div class="scenario-block">
+                <h4>Relato D</h4>
+                <div class="mixed-text-box">
+                    <p>"A área de TI é extremamente inflexível e avessa ao negócio. O sistema de CRM antigo não integra com a nova plataforma de vendas. Vendas precisa cadastrar clientes duas vezes. Quando pedimos integração, a TI respondeu que levaria 8 meses e não apresentou alternativa, mostrando total falta de empatia com a operação."</p>
+                </div>
+                <div class="secure-reveal" style="margin-top: 20px; padding-top: 20px;">
+                    <button class="elegant-btn outline" onclick="requestReveal(this)">Revelar Filtro</button>
+                    <div class="reveal-confirm hidden">
+                        <span>⚠️ Revelar o filtro?</span>
+                        <button class="elegant-btn confirm" onclick="confirmReveal(this)">Sim</button>
+                        <button class="elegant-btn cancel" onclick="cancelReveal(this)">Cancelar</button>
+                    </div>
+                    <div class="reveal-content hidden">
+                        <div class="filtered-text-box">
+                            <p><del class="judgment">A área de TI é extremamente inflexível e avessa ao negócio.</del> <span class="fact">O sistema de CRM</span> <del class="judgment">antigo</del> <span class="fact">não integra com a nova plataforma de vendas. Vendas precisa cadastrar clientes duas vezes. Quando pedimos integração, a TI respondeu que levaria 8 meses e não apresentou alternativa</span>, <del class="judgment">mostrando total falta de empatia com a operação.</del></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RELATO E -->
+            <div class="scenario-block">
+                <h4>Relato E</h4>
+                <div class="mixed-text-box">
+                    <p>"As reuniões de diretoria são uma perda de tempo e as pessoas só querem aparecer. A pauta tem 10 itens por semana, mas só os 3 primeiros são discutidos na 1 hora de reunião. Os outros 7 são repassados para a semana seguinte. Ninguém tem coragem de cortar os assuntos irrelevantes da pauta."</p>
+                </div>
+                <div class="secure-reveal" style="margin-top: 20px; padding-top: 20px;">
+                    <button class="elegant-btn outline" onclick="requestReveal(this)">Revelar Filtro</button>
+                    <div class="reveal-confirm hidden">
+                        <span>⚠️ Revelar o filtro?</span>
+                        <button class="elegant-btn confirm" onclick="confirmReveal(this)">Sim</button>
+                        <button class="elegant-btn cancel" onclick="cancelReveal(this)">Cancelar</button>
+                    </div>
+                    <div class="reveal-content hidden">
+                        <div class="filtered-text-box">
+                            <p><del class="judgment">As reuniões de diretoria são uma perda de tempo e as pessoas só querem aparecer.</del> <span class="fact">A pauta tem 10 itens por semana, mas só os 3 primeiros são discutidos na 1 hora de reunião. Os outros 7 são repassados para a semana seguinte.</span> <del class="judgment">Ninguém tem coragem de cortar os assuntos irrelevantes da pauta.</del></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EXERCÍCIO 6 -->
+        <div class="exercise-content" id="ex6">
+            <div class="ex-header">
+                <h3>Exercício 6 — "A mesma cena, três famílias"</h3>
+                <span class="ex-meta">⏱️ 15 min | 🎯 A tipologia não classifica a realidade — ela multiplica as leituras.</span>
+            </div>
+            
+            <div class="callout callout-info">
+                <div class="callout-title">Instrução</div>
+                <p>Dividam a turma em 3 grupos. Cada grupo usa o seletor abaixo para "vestir" uma lente diferente (Família A, B ou C) e ler a cena base com uma pergunta específica em mente. Em seguida, discutam a leitura.</p>
+            </div>
+
+            <div class="scenario-block" style="border-left: 4px solid var(--secondary-color);">
+                <h4>Cena Base</h4>
+                <p style="font-size: 1.1rem; line-height: 1.7;">Uma startup de 40 pessoas cresceu rápido. A área de produto entrega funcionalidades novas a cada duas semanas. A área de compliance foi criada há 6 meses porque um cliente grande exigiu certificação. Agora, toda funcionalidade nova precisa passar por uma auditoria de compliance antes de ir para produção. A auditoria leva de 5 a 10 dias. Produto reclama que perde velocidade. Compliance reclama que produto entrega documentação incompleta. As duas métricas — velocidade de entrega e conformidade — são legítimas e nenhuma área quer abrir mão delas. A diretoria não intervém.</p>
+            </div>
+
+            <div class="lens-selector-container">
+                <div class="lens-tabs">
+                    <button class="lens-btn active" data-lens="alinhamento">Grupo 1: Alinhamento</button>
+                    <button class="lens-btn" data-lens="fluxo">Grupo 2: Fluxo</button>
+                    <button class="lens-btn" data-lens="potencia">Grupo 3: Potência</button>
+                </div>
+                
+                <div class="lens-content active" id="lens-alinhamento">
+                    <div class="family-context">
+                        <h6>Tipos desta Família</h6>
+                        <div class="family-type-item"><strong>Disjunção:</strong> Dois regimes operam simultaneamente sem se alinhar.</div>
+                        <div class="family-type-item"><strong>Paradoxo:</strong> Dois polos desejáveis se tensionam mutuamente.</div>
+                        <div class="family-type-item"><strong>Fratura:</strong> Interface mal desenhada entre partes que precisam cooperar.</div>
+                    </div>
+                    <p class="lens-question"><strong>Pergunta da Lente:</strong> Onde há regimes que não se encaixam, interfaces mal desenhadas, ou polaridades legítimas em tensão?</p>
+                    <div class="secure-reveal">
+                        <button class="elegant-btn outline" onclick="requestReveal(this)">Revelar Leitura Esperada</button>
+                        <div class="reveal-confirm hidden">
+                            <span>⚠️ Revelar a resposta?</span>
+                            <button class="elegant-btn confirm" onclick="confirmReveal(this)">Sim</button>
+                            <button class="elegant-btn cancel" onclick="cancelReveal(this)">Não</button>
+                        </div>
+                        <div class="reveal-content hidden">
+                            <div class="content-block">
+                                <p><strong>Esperado: Fratura</strong> — produto e compliance são duas partes que precisam cooperar mas não têm protocolo de handoff. A interface entre elas é o ponto de tensão. Não há conflito de valores, há desenho de interface faltando.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lens-content" id="lens-fluxo">
+                    <div class="family-context">
+                        <h6>Tipos desta Família</h6>
+                        <div class="family-type-item"><strong>Compressão:</strong> Fluxo bloqueado num ponto específico.</div>
+                        <div class="family-type-item"><strong>Estagnação:</strong> Energia presente, movimento ausente.</div>
+                        <div class="family-type-item"><strong>Turbulência:</strong> Movimento sem direção, mudanças sem conclusão.</div>
+                    </div>
+                    <p class="lens-question"><strong>Pergunta da Lente:</strong> Onde o movimento está travado, bloqueado ou desordenado?</p>
+                    <div class="secure-reveal">
+                        <button class="elegant-btn outline" onclick="requestReveal(this)">Revelar Leitura Esperada</button>
+                        <div class="reveal-confirm hidden">
+                            <span>⚠️ Revelar a resposta?</span>
+                            <button class="elegant-btn confirm" onclick="confirmReveal(this)">Sim</button>
+                            <button class="elegant-btn cancel" onclick="cancelReveal(this)">Não</button>
+                        </div>
+                        <div class="reveal-content hidden">
+                            <div class="content-block">
+                                <p><strong>Esperado: Compressão</strong> — o fluxo de entrega funciona bem até chegar no ponto de auditoria. Ali ele comprime. O gargalo não está nas pessoas, está no ponto único de aprovação no meio do fluxo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lens-content" id="lens-potencia">
+                    <div class="family-context">
+                        <h6>Tipos desta Família</h6>
+                        <div class="family-type-item"><strong>Atração:</strong> Alguém já está fazendo diferente — mas não se espalha.</div>
+                        <div class="family-type-item"><strong>Capacidade latente:</strong> Saber-fazer existe mas está subutilizado.</div>
+                        <div class="family-type-item"><strong>Emergência travada:</strong> Algo está tentando nascer e não consegue.</div>
+                    </div>
+                    <p class="lens-question"><strong>Pergunta da Lente:</strong> O que já existe de potência que está sendo subutilizada ou impedida de emergir?</p>
+                    <div class="secure-reveal">
+                        <button class="elegant-btn outline" onclick="requestReveal(this)">Revelar Leitura Esperada</button>
+                        <div class="reveal-confirm hidden">
+                            <span>⚠️ Revelar a resposta?</span>
+                            <button class="elegant-btn confirm" onclick="confirmReveal(this)">Sim</button>
+                            <button class="elegant-btn cancel" onclick="cancelReveal(this)">Não</button>
+                        </div>
+                        <div class="reveal-content hidden">
+                            <div class="content-block">
+                                <p><strong>Esperado: Capacidade latente</strong> — produto já sabe entregar rápido, compliance já sabe auditar. Ambos têm competência instalada. O que falta é a interface que permita que ambas as potências se exerçam sem se anular.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+        </div>
+
+        <!-- EXERCÍCIO 7 -->
+        <div class="exercise-content" id="ex7">
+            <div class="ex-header">
+                <h3>Exercício 7 — "Baralho de tipos"</h3>
+                <span class="ex-meta">⏱️ 12 min | 🎯 Reconhecer os tipos de tensão na prática, mesmo quando eles se misturam.</span>
+            </div>
+            
+            <div class="callout callout-info">
+                <div class="callout-title">Instrução</div>
+                <p>O facilitador compartilha a tela. Para cada uma das 9 cenas, o grupo debate e tenta associar a um tipo. Algumas cenas cabem em mais de um tipo! O importante é argumentar. Revele o gabarito e avance de cena.</p>
+            </div>
+
+            <div class="flashcard-container">
+                <div class="flashcard-progress">Cena <span id="fc-current">1</span> de <span id="fc-total">9</span></div>
+                
+                <div class="flashcard-scene-box">
+                    <h4 id="fc-scene-title" style="color: var(--secondary-color); font-size: 1.5rem; margin-top: 0;">Cena A</h4>
+                    <p id="fc-scene-text" style="font-size: 1.25rem; line-height: 1.6; font-style: italic;">Carregando...</p>
+                </div>
+                
+                <div class="flashcard-types-grid">
+                    <div class="fc-type-badge tooltip-container">1. Disjunção<span class="tooltip-text">Dois regimes operam simultaneamente sem se alinhar</span></div>
+                    <div class="fc-type-badge tooltip-container">2. Paradoxo<span class="tooltip-text">Dois polos desejáveis se tensionam mutuamente</span></div>
+                    <div class="fc-type-badge tooltip-container">3. Fratura<span class="tooltip-text">Interface mal desenhada entre partes que precisam cooperar</span></div>
+                    <div class="fc-type-badge tooltip-container">4. Compressão<span class="tooltip-text">Fluxo bloqueado num ponto específico</span></div>
+                    <div class="fc-type-badge tooltip-container">5. Estagnação<span class="tooltip-text">Energia presente, movimento ausente</span></div>
+                    <div class="fc-type-badge tooltip-container">6. Turbulência<span class="tooltip-text">Movimento sem direção, mudanças sem conclusão</span></div>
+                    <div class="fc-type-badge tooltip-container">7. Atração<span class="tooltip-text">Alguém já está fazendo diferente — mas não se espalha</span></div>
+                    <div class="fc-type-badge tooltip-container">8. Capacidade latente<span class="tooltip-text">Saber-fazer existe mas está subutilizado</span></div>
+                    <div class="fc-type-badge tooltip-container">9. Emergência travada<span class="tooltip-text">Algo está tentando nascer e não consegue</span></div>
+                </div>
+
+                <div class="flashcard-reveal-area">
+                    <button class="elegant-btn outline" id="fc-reveal-btn" style="width: 100%; max-width: 400px; margin: 0 auto; display: block;">Ver Resposta & Discussão</button>
+                    
+                    <div class="fc-answer-box hidden" id="fc-answer-box">
+                        <div class="content-block" style="text-align: left;">
+                            <h5 style="color: var(--primary-color); margin-top: 0;">Tipo mais provável:</h5>
+                            <p id="fc-primary-ans" style="font-size: 1.1rem;"></p>
+                            
+                            <div id="fc-secondary-container" class="hidden" style="margin-top: 20px; padding-top: 20px; border-top: 1px dashed var(--border-color);">
+                                <h5 style="color: var(--secondary-color); margin-top: 0;">Também caberia:</h5>
+                                <p id="fc-secondary-ans" style="font-size: 1rem; color: var(--text-muted); margin-bottom: 0;"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flashcard-nav" style="display: flex; justify-content: space-between; margin-top: 30px;">
+                    <button class="elegant-btn cancel" id="fc-prev" disabled>⬅ Anterior</button>
+                    <button class="elegant-btn outline" id="fc-next">Próxima Cena ➡</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>Pensamento Sistêmico e Complexidade Aplicada - Target Teal</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/exercicios.js"></script>
+</body>
+</html>

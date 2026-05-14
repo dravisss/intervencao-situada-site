@@ -176,7 +176,9 @@ function generateHTML(title, contentHtml) {
             <nav class="nav-links">
                 <a href="revisao-critica.html">Revisão Crítica</a>
                 <a href="tensao-situada.html">Tensão Situada</a>
-                <a href="exemplos-canvas.html">Exemplos Práticos</a>
+                <a href="perturbacoes.html">Perturbações</a>
+                <a href="exercicios.html">Exercícios</a>
+                <a href="exemplos-canvas.html">Exemplos</a>
             </nav>
         </div>
     </header>
